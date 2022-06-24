@@ -1,0 +1,33 @@
+<canvas width="600" height="400"></canvas>
+<hr><p>Exercício de desenhos com JavaScript no canvas 
+desenho da bandeira da Itália Modificada.</p>
+<script>
+    // canvas e uma area de tela onde se pode desenhar em JavaScript
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    //Bandeira da Italia... so que nao
+
+    pincel.fillStyle = 'lightgrey'; // Atribuir o estilo da cor do pen.
+    pincel.fillRect(0, 0, 600, 400); // Preencher coordenadas
+
+    pincel.fillStyle = 'green';
+    pincel.fillRect(0, 0, 200, 400);
+
+    pincel.fillStyle = 'red';
+    pincel.fillRect(400, 0, 200, 400);
+
+    //Desenhando triangulo no meio da bandeira... P1-> P2-> P3.
+    pincel.fillStyle = 'yellow'
+    pincel.beginPath(); //F beginPath() -> iniciar o desenho. "Tracado"
+    pincel.moveTo(300, 200); // Criando o ponto do triangulo P1.
+    pincel.lineTo(200, 400); // Traçando linha até o P2.
+    pincel.lineTo(400, 400); // Traçando linha até o P3.
+    pincel.fill(); // Preencer a cor do triangulo.
+
+    //Desenhando circulo no topo do triangulo.
+    pincel.fillStyle = 'blue';
+    pincel.beginPath(); //F beginPath() -> iniciar o desenho. "Traçado"
+    pincel.arc(300, 200, 50, 0, 2 * 3.14); //F arc() -> Onde está o circulo.
+    pincel.fill(); // Preencer a cor do Circulo.
+</script>
