@@ -1,0 +1,34 @@
+<canvas width="600" height="400"></canvas>
+<hr><p>Exercício de desenhos com JavaScript no canvas, desenho da bandeira do BR.</p>
+<script>
+    //Desenhando a bandeira do Brasil 
+    var tela = document.querySelector('canvas'); //Criando a tela do desenho.
+    var pincel = tela.getContext('2d'); // Ferramenta "pincel" e o seu formato "2d".
+
+    // Desenho do Retangulo.
+    pincel.fillStyle = 'green'; // Atribuindo a cor do retangulo.
+    pincel.fillRect(0, 0, 600, 400); // Preencher a cor as coordenadas x e y.
+
+    // Desenho do Losango 
+    // 1 triangulo. 
+    pincel.fillStyle = 'yellow'; // 1 lozango/Triangulo de cor amarela.  
+    pincel.beginPath(); // O metodo esta reposicionando o "pincel" do canvas na nova posicao onde será desenhodo nas coordenadas x e y.
+    pincel.moveTo(300, 0); // Criado o 1 ponto do triangulo na posicao x e y.
+    pincel.lineTo(0, 200); // Movido o traco do ponto 1 ao ponto 2 na posicao x e y.
+    pincel.lineTo(600, 200); // Movido o traco do ponto 2 ao ponto 3 na posicao x e y.
+    pincel.fill(); //   Preenchido a cor do triangulo conforme o stylo.
+
+    // 2 triangulo.
+    pincel.fillStyle = 'yellow'; // 2 lozango/Triangulo de cor amarela.
+    pincel.beginPath(); // O metodo esta reposicionando o "pincel" do canvas na nova posicao onde será desenhodo nas coordenadas x e y.
+    pincel.moveTo(300, 400); // Criado o 1 ponto cental inferior do triangulo na posicao x e y.
+    pincel.lineTo(600, 200); // Movido a linha ao lado DIR do ponto 1 ao ponto 2 na posicao x e y.
+    pincel.lineTo(0, 200); // Movido a linha ao lado ESQ do ponto 2 ao ponto 3 na posicao x e y.
+    pincel.fill(); //  Preenchido a cor do triangulo conforme o stylo.
+
+    //Desenho do Arco 
+    pincel.fillStyle = "darkblue"; // Cor do arco
+    pincel.beginPath(); // O metodo esta reposicionando o "pincel" do canvas na nova posicao onde será desenhodo nas coordenadas x e y.
+    pincel.arc(300, 200, 100, 0, 2 * 3.14); // posição do arco fica no centro x e y (300 e 200) com o raio de 100. 
+    pincel.fill(); //  Preenchido a cor do triangulo conforme o stylo.
+</script>
